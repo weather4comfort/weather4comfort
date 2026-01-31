@@ -1,297 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Weather4Comfort HVAC Inc</title>
-<style>
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  color: #222;
-  background: #f8f8f8;
-}
-
-/* HEADER */
-header {
-  background: rgba(15,107,107,0.9);
-  color: #fff;
-  padding: 15px 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-}
-
-header img {
-  max-width: 180px;
-}
-
-header .phone a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 18px;
-  font-weight: bold;
-}
-
-/* HERO SLIDER */
-.hero {
-  position: relative;
-  height: 500px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  text-align: center;
-  text-shadow: 0 0 10px rgba(0,0,0,0.7);
-  overflow: hidden;
-}
-
-.hero-slide {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-}
-
-.hero-slide.active {
-  opacity: 1;
-}
-
-.hero h1 {
-  font-size: 48px;
-  margin-bottom: 20px;
-  z-index: 2;
-  position: relative;
-}
-
-.hero p {
-  font-size: 22px;
-  margin-bottom: 25px;
-  z-index: 2;
-  position: relative;
-}
-
-.hero a {
-  background-color: #006aff;
-  padding: 15px 30px;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 8px;
-  font-size: 18px;
-  z-index: 2;
-  position: relative;
-}
-
-.hero a:hover {
-  background-color: #004ecc;
-}
-
-/* SERVICES */
-.services {
-  padding: 60px 20px;
-  text-align: center;
-}
-
-.services h2 {
-  font-size: 36px;
-  margin-bottom: 50px;
-  color: #0f6b6b;
-}
-
-.service-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-}
-
-.service-card {
-  background: #fff;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
-  cursor: pointer;
-}
-
-.service-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-}
-
-.service-card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-
-.service-card h3 {
-  margin: 15px 0 10px 0;
-  color: #0f6b6b;
-}
-
-.service-card p {
-  margin: 0 15px 15px 15px;
-  font-size: 16px;
-  color: #555;
-}
-
-/* PAYMENT */
-.payment {
-  padding: 50px 20px;
-  text-align: center;
-  background: #f4f4f4;
-}
-
-.payment h2 {
-  color: #0f6b6b;
-  font-size: 32px;
-  margin-bottom: 25px;
-}
-
-.payment a {
-  display: inline-block;
-  font-size: 18px;
-  color: #fff;
-  background: #006aff;
-  padding: 15px 40px;
-  border-radius: 8px;
-  text-decoration: none;
-}
-
-.payment a:hover {
-  background: #004ecc;
-}
-
-/* FOOTER */
-footer {
-  background: #222;
-  color: #fff;
-  text-align: center;
-  padding: 25px;
-  font-size: 14px;
-}
-
-/* Responsive */
-@media(max-width:600px){
-  .hero h1 { font-size: 32px; }
-  .hero p { font-size: 18px; }
-  .service-card img { height: 150px; }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather4Comfort HVAC Inc</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            scroll-behavior: smooth;
+        }
+        header {
+            background-color: #007acc;
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        header p {
+            margin: 10px 0 0 0;
+            font-size: 1.3rem;
+        }
+        nav {
+            background-color: #005a99;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 15px 20px;
+            display: inline-block;
+        }
+        nav a:hover {
+            background-color: #004080;
+        }
+        section {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .services, .testimonials, .contact {
+            background-color: white;
+            padding: 30px 20px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+        }
+        .services img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            display: block;
+            margin: 15px auto;
+        }
+        .services h2, .testimonials h2, .contact h2 {
+            color: #007acc;
+            margin-bottom: 15px;
+        }
+        .service-item {
+            margin-bottom: 15px;
+        }
+        .testimonial-item {
+            border-left: 4px solid #007acc;
+            padding-left: 15px;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+        .contact p {
+            font-size: 1.1rem;
+            margin: 10px 0;
+        }
+        .cta-button {
+            display: inline-block;
+            padding: 15px 25px;
+            background-color: #ff6600;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+        }
+        iframe {
+            width: 100%;
+            border: 0;
+            border-radius: 10px;
+            margin-top: 20px;
+            height: 300px;
+        }
+        form input, form textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+        form button {
+            background-color: #007acc;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        form button:hover {
+            background-color: #005a99;
+        }
+        @media (max-width: 768px) {
+            header h1 { font-size: 2rem; }
+            header p { font-size: 1rem; }
+        }
+    </style>
 </head>
 <body>
 
 <header>
-  <img src="images/weather4comfort-logo.png" alt="Weather4Comfort HVAC Logo">
-  <div class="phone">📞 <a href="tel:2242026367">(224) 202-6367</a></div>
+    <h1>WEATHER4COMFORT HVAC INC</h1>
+    <p>24/7 HVAC Services On Demand</p>
 </header>
 
-<!-- HERO SLIDER -->
-<section class="hero">
-  <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1601924638867-3b6f187a3f1c?auto=format&fit=crop&w=1400&q=80');"></div>
-  <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1598327100944-9d5de3993c25?auto=format&fit=crop&w=1400&q=80');"></div>
-  <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1593990402560-ec09c94a55d2?auto=format&fit=crop&w=1400&q=80');"></div>
-  <h1>Reliable HVAC Solutions</h1>
-  <p>Heating • Cooling • Windows • Doors – Comfort you can trust all year round.</p>
-  <a href="#payment">Pay Online</a>
+<nav>
+    <a href="#services">Services</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<section id="services" class="services">
+    <h2>Our Services</h2>
+    <img src="https://i.imgur.com/6z4B1sD.png" alt="HVAC Service">
+    <div class="service-item">✔ We install all HVAC Units</div>
+    <div class="service-item">✔ 10 Years Additional Warranty</div>
+    <div class="service-item">✔ We are Insured and Bonded</div>
 </section>
 
-<section class="services">
-  <h2>Our Services</h2>
-  <div class="service-grid">
-    <div class="service-card">
-      <img src="https://images.unsplash.com/photo-1598327100944-9d5de3993c25?auto=format&fit=crop&w=400&q=60" alt="AC Installation">
-      <h3>AC Installation</h3>
-      <p>Professional AC installation for homes and businesses.</p>
-    </div>
-    <div class="service-card">
-      <img src="https://images.unsplash.com/photo-1593990402560-ec09c94a55d2?auto=format&fit=crop&w=400&q=60" alt="Furnace Repair">
-      <h3>Furnace Repair</h3>
-      <p>Fast and reliable furnace repair services.</p>
-    </div>
-    <div class="service-card">
-      <img src="https://images.unsplash.com/photo-1610637695276-b24f50e1db62?auto=format&fit=crop&w=400&q=60" alt="HVAC Service">
-      <h3>HVAC Service</h3>
-      <p>Full-service HVAC maintenance and installation.</p>
-    </div>
-    <div class="service-card">
-      <img src="https://images.unsplash.com/photo-1598004578369-47edb10fa7a8?auto=format&fit=crop&w=400&q=60" alt="Duct Cleaning">
-      <h3>Duct Cleaning</h3>
-      <p>Clean ducts for better air quality and efficiency.</p>
-    </div>
-  </div>
+<section id="testimonials" class="testimonials">
+    <h2>Customer Testimonials</h2>
+    <div class="testimonial-item">"Fast, reliable, and professional! Highly recommend Weather4Comfort." – Sarah M.</div>
+    <div class="testimonial-item">"Jonathan and team installed our new AC unit perfectly. Great service!" – Mark T.</div>
+    <div class="testimonial-item">"24/7 service was a lifesaver during the heatwave!" – Linda K.</div>
 </section>
 
-<section class="payment" id="payment">
-  <h2>Pay Online</h2>
-  <a id="square-pay-btn" href="https://square.link/u/EEOnNSPg?src=embed" target="_blank">Pay Now</a>
+<section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <p><strong>Address:</strong> 4350 W Lake Ave Apt B102, Glenview, IL 60026</p>
+    <p><strong>Call Today for a Free Estimate:</strong> Jonathan Jones - 224-202-6367</p>
+    <a href="tel:2242026367" class="cta-button">Call Now</a>
+
+    <h3>Send us a message</h3>
+    <form action="https://formspree.io/f/your-form-id" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="_replyto" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+
+    <iframe
+        src="https://www.google.com/maps/embed/v1/place?key=YOUR_GOOGLE_MAPS_API_KEY&q=4350+W+Lake+Ave+Glenview+IL+60026"
+        allowfullscreen>
+    </iframe>
 </section>
 
 <footer>
-  <p>© 2026 Weather4Comfort HVAC Inc. All Rights Reserved.</p>
+    &copy; 2026 Weather4Comfort HVAC Inc. All Rights Reserved.
 </footer>
-
-<script>
-// Hero slider rotation
-let slides = document.querySelectorAll('.hero-slide');
-let currentSlide = 0;
-setInterval(() => {
-  slides[currentSlide].classList.remove('active');
-  currentSlide = (currentSlide + 1) % slides.length;
-  slides[currentSlide].classList.add('active');
-}, 5000); // change every 5 seconds
-
-// Square payment popup
-document.getElementById('square-pay-btn').addEventListener('click', function(e){
-  const url = this.href;
-  const redirectUrl = 'thank-you.html';
-  const w = 500, h = 600;
-  const left = (screen.width - w)/2;
-  const top = (screen.height - h)/2;
-  const newWindow = window.open(url, 'Square Checkout', `width=${w},height=${h},top=${top},left=${left}`);
-  const timer = setInterval(() => {
-    if(newWindow.closed){
-      clearInterval(timer);
-      window.location.href = redirectUrl;
-    }
-  }, 500);
-  e.preventDefault();
-});
-</script>
 
 </body>
 </html>
-
-<section class="services">
-  <h2>Our Services</h2>
-  <div class="service-grid">
-    <div class="service-card">
-      <!-- AC Installation with your uploaded image -->
-      <img src="images/ac-installation.jpg" alt="AC Installation">
-      <h3>AC Installation</h3>
-      <p>Professional AC installation for homes and businesses.</p>
-    </div>
-    <div class="service-card">
-      <img src="images/furnace-repair.jpg" alt="Furnace Repair">
-      <h3>Furnace Repair</h3>
-      <p>Fast and reliable furnace repair services.</p>
-    </div>
-    <div class="service-card">
-      <img src="images/hvac-service.jpg" alt="HVAC Service">
-      <h3>HVAC Service</h3>
-      <p>Full-service HVAC maintenance and installation.</p>
-    </div>
-    <div class="service-card">
-      <img src="images/duct-cleaning.jpg" alt="Duct Cleaning">
-      <h3>Duct Cleaning</h3>
-      <p>Clean ducts for better air quality and efficiency.</p>
-    </div>
-  </div>
-</section>

@@ -43,8 +43,53 @@
         box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
     }
     .services h2, .testimonials h2, .contact h2 { color: #007acc; margin-bottom: 15px; }
-    .service-item { margin-bottom: 15px; }
-    .testimonial-item { border-left: 4px solid #007acc; padding-left: 15px; margin-bottom: 15px; font-style: italic; }
+    .service-item {
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        font-weight: 500;
+    }
+    .service-item::before {
+        content: "✔";
+        color: #ff6600; 
+        font-weight: bold;
+        margin-right: 10px;
+    }
+    .service-image {
+        width: 100%;
+        max-width: 350px;
+        border-radius: 10px;
+        margin: 15px auto;
+        display: block;
+    }
+    .service-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin-top: 20px;
+    }
+    .service-card {
+        background: #f9f9f9;
+        border-radius: 10px;
+        padding: 15px;
+        text-align: center;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    }
+    .testimonial-item {
+        border-left: 4px solid #007acc;
+        padding-left: 15px;
+        margin-bottom: 15px;
+        font-style: italic;
+        display: flex;
+        align-items: center;
+    }
+    .testimonial-item img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        margin-right: 15px;
+        object-fit: cover;
+    }
     .contact p { font-size: 1.1rem; margin: 10px 0; }
     .cta-button {
         display: inline-block;
@@ -116,19 +161,45 @@
 <!-- Our Services Section -->
 <section id="services" class="services">
     <h2>Our Services</h2>
-    <div class="service-item">✔ We install all HVAC units</div>
-    <div class="service-item">✔ 10 Years Additional Warranty</div>
-    <div class="service-item">✔ We are Insured and Bonded</div>
-    <div class="service-item">✔ 24/7 Emergency Services Available</div>
-    <div class="service-item">✔ Maintenance and Repairs</div>
+    <div class="service-grid">
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1616627897531-70a0c8ad2c52?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VydmljZXx8fGh2YWMlMjBhY3xlbnwwfHx8fDE2OTMxMjc2NjM&ixlib=rb-4.0.3&q=80&w=400" alt="HVAC Installation" class="service-image">
+            <p>We install all HVAC units</p>
+        </div>
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1590490357883-2bfae4324a7e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VydmljZXx8fHdvcmtlciUyMGluJTIwaG92YWMlMjBhbGx8ZW58MHx8fHwxNjkzMTI3Njk1&ixlib=rb-4.0.3&q=80&w=400" alt="Warranty" class="service-image">
+            <p>10 Years Additional Warranty</p>
+        </div>
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1609088688397-df79da5b4f3e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VydmljZXx8fGluc3VyZWQlMjBhbmQlMjBib25kZWQlMjB8ZW58MHx8fHwxNjkzMTI3NzE3&ixlib=rb-4.0.3&q=80&w=400" alt="Insurance" class="service-image">
+            <p>We are Insured and Bonded</p>
+        </div>
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1601894121844-7073f6d65c2b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VydmljZXx8fHJlcGFpciUyMGh2YWMlMjBjb21wbGV0ZWQh&ixlib=rb-4.0.3&q=80&w=400" alt="Emergency Service" class="service-image">
+            <p>24/7 Emergency Services Available</p>
+        </div>
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1590080872007-904b47f21544?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VydmljZXx8bWFpbnRlbmFuY2UlMjBhbmQlMjByZXBhaXJzfGVufDB8fHx8MTY5MzEyNzc1Mw&ixlib=rb-4.0.3&q=80&w=400" alt="Maintenance" class="service-image">
+            <p>Maintenance and Repairs</p>
+        </div>
+    </div>
 </section>
 
 <!-- Testimonials Section -->
 <section id="testimonials" class="testimonials">
     <h2>Customer Testimonials</h2>
-    <div class="testimonial-item">"Fast, reliable, and professional! Highly recommend Weather4Comfort." – Sarah M.</div>
-    <div class="testimonial-item">"Jonathan and team installed our new AC unit perfectly. Great service!" – Mark T.</div>
-    <div class="testimonial-item">"24/7 service was a lifesaver during the heatwave!" – Linda K.</div>
+    <div class="testimonial-item">
+        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Sarah M.">
+        <p>"Fast, reliable, and professional! Highly recommend Weather4Comfort." – Sarah M.</p>
+    </div>
+    <div class="testimonial-item">
+        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Mark T.">
+        <p>"Jonathan and team installed our new AC unit perfectly. Great service!" – Mark T.</p>
+    </div>
+    <div class="testimonial-item">
+        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Linda K.">
+        <p>"24/7 service was a lifesaver during the heatwave!" – Linda K.</p>
+    </div>
 </section>
 
 <!-- Contact Section -->

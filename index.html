@@ -78,7 +78,7 @@ header {
   gap: 25px;
 }
 
-/* Service Card with Overlay */
+/* Service Card */
 .service-card {
   position: relative;
   overflow: hidden;
@@ -86,6 +86,7 @@ header {
   cursor: pointer;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
   transition: transform 0.4s, box-shadow 0.4s;
+  background: #fff;
 }
 
 .service-card img {
@@ -97,48 +98,20 @@ header {
 }
 
 .service-card:hover img {
-  transform: scale(1.1);
-}
-
-/* Overlay */
-.service-card .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(15, 107, 107, 0.7);
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.4s;
-  text-align: center;
-  padding: 20px;
-}
-
-.service-card:hover .overlay {
-  opacity: 1;
+  transform: scale(1.05);
 }
 
 .service-card h3 {
-  position: absolute;
-  bottom: 10px;
-  left: 0;
-  width: 100%;
   text-align: center;
+  margin: 10px 0 5px 0;
   font-size: 20px;
-  background: rgba(0,0,0,0.5);
-  color: #fff;
-  padding: 10px 0;
-  margin: 0;
-  transition: bottom 0.4s;
 }
 
-.service-card:hover h3 {
-  bottom: 50%;
-  transform: translateY(50%);
+.service-card p {
+  text-align: center;
+  margin: 0 10px 15px 10px;
+  font-size: 16px;
+  color: #555;
 }
 
 /* PAYMENT SECTION */
@@ -150,23 +123,16 @@ header {
 }
 
 .payment-container {
-  overflow: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-  width: 259px;
-  background: #FFFFFF;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 260px;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.1);
   border-radius: 10px;
   padding: 20px;
-  font-family: SQ Market, Helvetica, Arial, sans-serif;
-  text-align: center;
 }
 
 .payment-container p {
   font-size: 18px;
-  line-height: 20px;
   margin: 5px 0;
 }
 
@@ -179,11 +145,10 @@ header {
   font-size: 18px;
   line-height: 48px;
   height: 48px;
-  color: #ffffff;
+  color: #fff;
   min-width: 212px;
   background-color: #006aff;
   text-align: center;
-  box-shadow: 0 0 0 1px rgba(0,0,0,.1) inset;
   border-radius: 6px;
   text-decoration: none;
   margin-top: 10px;
@@ -252,6 +217,13 @@ footer {
   padding: 20px;
   font-size: 14px;
 }
+
+/* Responsive Images */
+@media (max-width: 500px) {
+  .service-card img {
+    height: 180px;
+  }
+}
 </style>
 </head>
 
@@ -277,42 +249,36 @@ footer {
 
 <section class="services">
   <h2>Our Work</h2>
-
   <div class="service-grid">
     <div class="service-card">
-      <img src="images/ac-installation.jpg" alt="Air Conditioning Installation" loading="lazy">
+      <img src="images/ac-installation.jpg" alt="Air Conditioning Installation">
       <h3>AC Installation</h3>
-      <div class="overlay">Professional AC installation for homes and businesses.</div>
+      <p>Professional AC installation for homes and businesses.</p>
     </div>
-
     <div class="service-card">
-      <img src="images/furnace-repair.jpg" alt="Furnace Repair" loading="lazy">
+      <img src="images/furnace-repair.jpg" alt="Furnace Repair Service">
       <h3>Furnace Repair</h3>
-      <div class="overlay">Fast and reliable furnace repair services.</div>
+      <p>Fast and reliable furnace repair services.</p>
     </div>
-
     <div class="service-card">
-      <img src="images/hvac-technician-working.jpg" alt="HVAC Service" loading="lazy">
+      <img src="images/hvac-technician-working.jpg" alt="HVAC Service">
       <h3>HVAC Service</h3>
-      <div class="overlay">Full-service HVAC maintenance and installation.</div>
+      <p>Full-service HVAC maintenance and installation.</p>
     </div>
-
     <div class="service-card">
-      <img src="images/duct-cleaning.jpg" alt="Duct Cleaning" loading="lazy">
+      <img src="images/duct-cleaning.jpg" alt="Duct Cleaning">
       <h3>Duct Cleaning</h3>
-      <div class="overlay">Clean ducts for better air quality and efficiency.</div>
+      <p>Clean ducts for better air quality and efficiency.</p>
     </div>
-
     <div class="service-card">
-      <img src="images/thermostat-installation.jpg" alt="Thermostat Installation" loading="lazy">
+      <img src="images/thermostat-installation.jpg" alt="Thermostat Installation">
       <h3>Thermostat Installation</h3>
-      <div class="overlay">Smart and efficient thermostat installations.</div>
+      <p>Smart and efficient thermostat installations.</p>
     </div>
-
     <div class="service-card">
-      <img src="images/heat-pump.jpg" alt="Heat Pump Installation" loading="lazy">
+      <img src="images/heat-pump.jpg" alt="Heat Pump Installation">
       <h3>Heat Pump Installation</h3>
-      <div class="overlay">Professional heat pump installation and service.</div>
+      <p>Professional heat pump installation and service.</p>
     </div>
   </div>
 </section>
@@ -323,9 +289,9 @@ footer {
     <p class="bold">Entered by customer</p>
     <a id="embedded-checkout-modal-checkout-button"
        target="_blank"
-       data-url="https://square.link/u/EEOnNSPg?src=embd"
        href="https://square.link/u/EEOnNSPg?src=embed"
-       class="square-btn">
+       class="square-btn"
+       onclick="openSquareCheckout(event)">
       Pay now
     </a>
   </div>
@@ -361,15 +327,11 @@ function openLightbox(index) {
   lightboxImg.src = images[currentIndex];
 }
 
-function closeLightbox() {
-  lightbox.style.display = 'none';
-}
-
+function closeLightbox() { lightbox.style.display = 'none'; }
 function showPrev() {
   currentIndex = (currentIndex - 1 + images.length) % images.length;
   lightboxImg.src = images[currentIndex];
 }
-
 function showNext() {
   currentIndex = (currentIndex + 1) % images.length;
   lightboxImg.src = images[currentIndex];
@@ -379,38 +341,23 @@ cards.forEach((img, i) => img.addEventListener('click', () => openLightbox(i)));
 closeBtn.addEventListener('click', closeLightbox);
 prevBtn.addEventListener('click', showPrev);
 nextBtn.addEventListener('click', showNext);
+lightbox.addEventListener('click', e => { if(e.target === lightbox) closeLightbox(); });
 
-// Close lightbox when clicking outside the image
-lightbox.addEventListener('click', e => {
-  if (e.target === lightbox) closeLightbox();
-});
-
-// Square modal button
-function showCheckoutWindow(e) {
+// Square modal button with redirect
+function openSquareCheckout(e) {
   e.preventDefault();
-  const url = document.getElementById('embedded-checkout-modal-checkout-button').getAttribute('data-url');
-  const title = 'Square Payment Links';
-  const topWindow = window.top || window;
+  const url = 'https://square.link/u/EEOnNSPg?src=embed';
+  const redirectUrl = 'thank-you.html';
+  const checkoutWindow = window.open(url, 'Square Checkout', 'width=500,height=600');
 
-  const dualScreenLeft = topWindow.screenLeft !== undefined ? topWindow.screenLeft : topWindow.screenX;
-  const dualScreenTop = topWindow.screenTop !== undefined ? topWindow.screenTop : topWindow.screenY;
-
-  const width = topWindow.innerWidth || document.documentElement.clientWidth || screen.width;
-  const height = topWindow.innerHeight || document.documentElement.clientHeight || screen.height;
-
-  const h = height * 0.75;
-  const w = 500;
-  const systemZoom = width / topWindow.screen.availWidth;
-  const left = (width - w) / 2 / systemZoom + dualScreenLeft;
-  const top = (height - h) / 2 / systemZoom + dualScreenTop;
-
-  const newWindow = window.open(url, title, `scrollbars=yes, width=${w / systemZoom}, height=${h / systemZoom}, top=${top}, left=${left}`);
-  if (window.focus) newWindow.focus();
+  const timer = setInterval(() => {
+    if (checkoutWindow.closed) {
+      clearInterval(timer);
+      window.location.href = redirectUrl;
+    }
+  }, 500);
 }
-
-document.getElementById('embedded-checkout-modal-checkout-button').addEventListener('click', showCheckoutWindow);
 </script>
 
 </body>
 </html>
-

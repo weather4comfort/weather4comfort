@@ -4,60 +4,52 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Weather4Comfort HVAC Inc</title>
-
 <style>
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   color: #222;
-  background: #f9f9f9;
+  background: #f8f8f8;
 }
 
 /* HEADER */
 header {
   background: #0f6b6b;
-  color: white;
-  padding: 20px;
-}
-
-.header-container {
+  color: #fff;
+  padding: 15px 20px;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   flex-wrap: wrap;
 }
 
-.logo-area img {
-  max-width: 220px;
+header img {
+  max-width: 180px;
 }
 
-.company-name {
-  font-size: 20px;
-  font-weight: bold;
-  margin-top: 5px;
-}
-
-.phone a {
-  color: white;
+header .phone a {
+  color: #fff;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
 }
 
 /* HERO */
 .hero {
-  background: #f4f4f4;
-  padding: 60px 20px;
+  background: #e6f2f2;
+  padding: 80px 20px;
   text-align: center;
 }
 
 .hero h1 {
-  font-size: clamp(28px, 6vw, 48px);
+  font-size: 36px;
   margin-bottom: 15px;
+  color: #0f6b6b;
 }
 
 .hero p {
-  font-size: clamp(16px, 3vw, 20px);
+  font-size: 20px;
+  color: #333;
 }
 
 /* SERVICES */
@@ -69,160 +61,76 @@ header {
 .services h2 {
   font-size: 32px;
   margin-bottom: 40px;
+  color: #0f6b6b;
 }
 
-/* Grid */
 .service-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 25px;
 }
 
-/* Service Card */
 .service-card {
-  position: relative;
-  overflow: hidden;
-  border-radius: 12px;
-  cursor: pointer;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  transition: transform 0.4s, box-shadow 0.4s;
   background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
 }
 
 .service-card img {
   width: 100%;
-  height: 220px;
+  height: 180px;
   object-fit: cover;
-  display: block;
-  transition: transform 0.4s;
-}
-
-.service-card:hover img {
-  transform: scale(1.05);
+  border-radius: 8px;
+  margin-bottom: 15px;
 }
 
 .service-card h3 {
-  text-align: center;
-  margin: 10px 0 5px 0;
+  margin: 0 0 10px 0;
   font-size: 20px;
+  color: #0f6b6b;
 }
 
 .service-card p {
-  text-align: center;
-  margin: 0 10px 15px 10px;
+  margin: 0;
   font-size: 16px;
   color: #555;
 }
 
-/* PAYMENT SECTION */
+/* PAYMENT */
 .payment {
-  display: flex;
-  justify-content: center;
   padding: 50px 20px;
+  text-align: center;
   background: #f4f4f4;
 }
 
-.payment-container {
-  text-align: center;
-  width: 260px;
-  background: #fff;
-  border: 1px solid rgba(0,0,0,0.1);
-  border-radius: 10px;
-  padding: 20px;
-}
-
-.payment-container p {
-  font-size: 18px;
-  margin: 5px 0;
-}
-
-.payment-container p.bold {
-  font-weight: 600;
-}
-
-.square-btn {
+.payment a {
   display: inline-block;
   font-size: 18px;
-  line-height: 48px;
-  height: 48px;
   color: #fff;
-  min-width: 212px;
-  background-color: #006aff;
-  text-align: center;
-  border-radius: 6px;
+  background: #006aff;
+  padding: 15px 40px;
+  border-radius: 8px;
   text-decoration: none;
-  margin-top: 10px;
+  margin-top: 15px;
 }
 
-/* LIGHTBOX */
-#lightbox {
-  position: fixed;
-  display: none;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background: rgba(0,0,0,0.9);
-  z-index: 1000;
-  align-items: center;
-  justify-content: center;
-}
-
-#lightbox img {
-  max-width: 90%;
-  max-height: 80%;
-  border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-}
-
-#lightbox .close, #lightbox .prev, #lightbox .next {
-  position: absolute;
-  color: white;
-  font-size: 40px;
-  font-weight: bold;
-  cursor: pointer;
-  user-select: none;
-  padding: 10px;
-  transition: color 0.3s;
-}
-
-#lightbox .close {
-  top: 20px;
-  right: 30px;
-}
-
-#lightbox .prev {
-  left: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-#lightbox .next {
-  right: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-#lightbox .close:hover, 
-#lightbox .prev:hover, 
-#lightbox .next:hover {
-  color: #0f6b6b;
+.payment a:hover {
+  background: #004ecc;
 }
 
 /* FOOTER */
 footer {
   background: #222;
-  color: white;
+  color: #fff;
   text-align: center;
   padding: 20px;
   font-size: 14px;
-}
-
-/* Responsive Images */
-@media (max-width: 500px) {
-  .service-card img {
-    height: 180px;
-  }
 }
 </style>
 </head>
@@ -230,133 +138,69 @@ footer {
 <body>
 
 <header>
-  <div class="header-container">
-    <div class="logo-area">
-      <img src="https://via.placeholder.com/220x60?text=Logo" alt="Weather4Comfort HVAC Inc Logo">
-      <div class="company-name">WEATHER4COMFORT HVAC INC</div>
-    </div>
-
-    <div class="phone">
-      📞 <a href="tel:2242026367">(224) 202-6367</a>
-    </div>
-  </div>
+  <img src="https://via.placeholder.com/180x60?text=Logo" alt="Weather4Comfort HVAC Logo">
+  <div class="phone">📞 <a href="tel:2242026367">(224) 202-6367</a></div>
 </header>
 
 <section class="hero">
-  <h1>Heating • Cooling • Windows • Doors</h1>
-  <p>Reliable comfort solutions you can trust all year round.</p>
+  <h1>Reliable HVAC Solutions</h1>
+  <p>Heating • Cooling • Windows • Doors – Comfort you can trust all year round.</p>
 </section>
 
 <section class="services">
-  <h2>Our Work</h2>
+  <h2>Our Services</h2>
   <div class="service-grid">
     <div class="service-card">
-      <img src="https://via.placeholder.com/400x220?text=AC+Installation" alt="Air Conditioning Installation">
+      <img src="https://via.placeholder.com/300x180?text=AC+Installation" alt="AC Installation">
       <h3>AC Installation</h3>
       <p>Professional AC installation for homes and businesses.</p>
     </div>
     <div class="service-card">
-      <img src="https://via.placeholder.com/400x220?text=Furnace+Repair" alt="Furnace Repair Service">
+      <img src="https://via.placeholder.com/300x180?text=Furnace+Repair" alt="Furnace Repair">
       <h3>Furnace Repair</h3>
       <p>Fast and reliable furnace repair services.</p>
     </div>
     <div class="service-card">
-      <img src="https://via.placeholder.com/400x220?text=HVAC+Service" alt="HVAC Service">
+      <img src="https://via.placeholder.com/300x180?text=HVAC+Service" alt="HVAC Service">
       <h3>HVAC Service</h3>
       <p>Full-service HVAC maintenance and installation.</p>
     </div>
     <div class="service-card">
-      <img src="https://via.placeholder.com/400x220?text=Duct+Cleaning" alt="Duct Cleaning">
+      <img src="https://via.placeholder.com/300x180?text=Duct+Cleaning" alt="Duct Cleaning">
       <h3>Duct Cleaning</h3>
       <p>Clean ducts for better air quality and efficiency.</p>
-    </div>
-    <div class="service-card">
-      <img src="https://via.placeholder.com/400x220?text=Thermostat+Installation" alt="Thermostat Installation">
-      <h3>Thermostat Installation</h3>
-      <p>Smart and efficient thermostat installations.</p>
-    </div>
-    <div class="service-card">
-      <img src="https://via.placeholder.com/400x220?text=Heat+Pump+Installation" alt="Heat Pump Installation">
-      <h3>Heat Pump Installation</h3>
-      <p>Professional heat pump installation and service.</p>
     </div>
   </div>
 </section>
 
 <section class="payment">
-  <div class="payment-container">
-    <p>PAY HERE</p>
-    <p class="bold">Entered by customer</p>
-    <a id="embedded-checkout-modal-checkout-button"
-       target="_blank"
-       href="https://square.link/u/EEOnNSPg?src=embed"
-       class="square-btn"
-       onclick="openSquareCheckout(event)">
-      Pay now
-    </a>
-  </div>
+  <h2>Pay Online</h2>
+  <a id="square-pay-btn" href="https://square.link/u/EEOnNSPg?src=embed" target="_blank">
+    Pay Now
+  </a>
 </section>
-
-<!-- LIGHTBOX -->
-<div id="lightbox">
-  <span class="close">&times;</span>
-  <span class="prev">&#10094;</span>
-  <img src="" alt="">
-  <span class="next">&#10095;</span>
-</div>
 
 <footer>
   <p>© 2026 Weather4Comfort HVAC Inc. All Rights Reserved.</p>
 </footer>
 
 <script>
-// Lightbox functionality
-const cards = document.querySelectorAll('.service-card img');
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = lightbox.querySelector('img');
-const closeBtn = lightbox.querySelector('.close');
-const prevBtn = lightbox.querySelector('.prev');
-const nextBtn = lightbox.querySelector('.next');
-
-let currentIndex = 0;
-const images = Array.from(cards).map(img => img.src);
-
-function openLightbox(index) {
-  currentIndex = index;
-  lightbox.style.display = 'flex';
-  lightboxImg.src = images[currentIndex];
-}
-
-function closeLightbox() { lightbox.style.display = 'none'; }
-function showPrev() {
-  currentIndex = (currentIndex - 1 + images.length) % images.length;
-  lightboxImg.src = images[currentIndex];
-}
-function showNext() {
-  currentIndex = (currentIndex + 1) % images.length;
-  lightboxImg.src = images[currentIndex];
-}
-
-cards.forEach((img, i) => img.addEventListener('click', () => openLightbox(i)));
-closeBtn.addEventListener('click', closeLightbox);
-prevBtn.addEventListener('click', showPrev);
-nextBtn.addEventListener('click', showNext);
-lightbox.addEventListener('click', e => { if(e.target === lightbox) closeLightbox(); });
-
-// Square modal button with redirect
-function openSquareCheckout(e) {
-  e.preventDefault();
-  const url = 'https://square.link/u/EEOnNSPg?src=embed';
+document.getElementById('square-pay-btn').addEventListener('click', function(e){
+  // Optional: Open in popup
+  const url = this.href;
   const redirectUrl = 'thank-you.html';
-  const checkoutWindow = window.open(url, 'Square Checkout', 'width=500,height=600');
-
+  const w = 500, h = 600;
+  const left = (screen.width - w)/2;
+  const top = (screen.height - h)/2;
+  const newWindow = window.open(url, 'Square Checkout', `width=${w},height=${h},top=${top},left=${left}`);
   const timer = setInterval(() => {
-    if (checkoutWindow.closed) {
+    if(newWindow.closed){
       clearInterval(timer);
       window.location.href = redirectUrl;
     }
   }, 500);
-}
+  e.preventDefault();
+});
 </script>
 
 </body>

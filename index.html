@@ -14,13 +14,15 @@ body {
 
 /* HEADER */
 header {
-  background: #0f6b6b;
+  background: rgba(15,107,107,0.9);
   color: #fff;
-  padding: 15px 20px;
+  padding: 15px 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 header img {
@@ -34,70 +36,108 @@ header .phone a {
   font-weight: bold;
 }
 
-/* HERO */
+/* HERO SLIDER */
 .hero {
-  background: #e6f2f2;
-  padding: 80px 20px;
+  position: relative;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
   text-align: center;
+  text-shadow: 0 0 10px rgba(0,0,0,0.7);
+  overflow: hidden;
+}
+
+.hero-slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.hero-slide.active {
+  opacity: 1;
 }
 
 .hero h1 {
-  font-size: 36px;
-  margin-bottom: 15px;
-  color: #0f6b6b;
+  font-size: 48px;
+  margin-bottom: 20px;
+  z-index: 2;
+  position: relative;
 }
 
 .hero p {
-  font-size: 20px;
-  color: #333;
+  font-size: 22px;
+  margin-bottom: 25px;
+  z-index: 2;
+  position: relative;
+}
+
+.hero a {
+  background-color: #006aff;
+  padding: 15px 30px;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 18px;
+  z-index: 2;
+  position: relative;
+}
+
+.hero a:hover {
+  background-color: #004ecc;
 }
 
 /* SERVICES */
 .services {
-  padding: 50px 20px;
+  padding: 60px 20px;
   text-align: center;
 }
 
 .services h2 {
-  font-size: 32px;
-  margin-bottom: 40px;
+  font-size: 36px;
+  margin-bottom: 50px;
   color: #0f6b6b;
 }
 
 .service-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
 }
 
 .service-card {
   background: #fff;
-  padding: 20px;
   border-radius: 12px;
+  overflow: hidden;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  transition: transform 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
 }
 
 .service-card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
 .service-card img {
   width: 100%;
-  height: 180px;
+  height: 200px;
   object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 15px;
 }
 
 .service-card h3 {
-  margin: 0 0 10px 0;
-  font-size: 20px;
+  margin: 15px 0 10px 0;
   color: #0f6b6b;
 }
 
 .service-card p {
-  margin: 0;
+  margin: 0 15px 15px 15px;
   font-size: 16px;
   color: #555;
 }
@@ -109,6 +149,12 @@ header .phone a {
   background: #f4f4f4;
 }
 
+.payment h2 {
+  color: #0f6b6b;
+  font-size: 32px;
+  margin-bottom: 25px;
+}
+
 .payment a {
   display: inline-block;
   font-size: 18px;
@@ -117,7 +163,6 @@ header .phone a {
   padding: 15px 40px;
   border-radius: 8px;
   text-decoration: none;
-  margin-top: 15px;
 }
 
 .payment a:hover {
@@ -129,23 +174,33 @@ footer {
   background: #222;
   color: #fff;
   text-align: center;
-  padding: 20px;
+  padding: 25px;
   font-size: 14px;
+}
+
+/* Responsive */
+@media(max-width:600px){
+  .hero h1 { font-size: 32px; }
+  .hero p { font-size: 18px; }
+  .service-card img { height: 150px; }
 }
 </style>
 </head>
-
 <body>
 
 <header>
-  <img src="https://images.unsplash.com/photo-1601924638867-3b6f187a3f1c?auto=format&fit=crop&w=220&q=60" alt="Weather4Comfort HVAC Logo">
+  <img src="images/weather4comfort-logo.png" alt="Weather4Comfort HVAC Logo">
   <div class="phone">📞 <a href="tel:2242026367">(224) 202-6367</a></div>
 </header>
 
+<!-- HERO SLIDER -->
 <section class="hero">
- <img src="images/weather4comfort-logo.png
-   ">
+  <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1601924638867-3b6f187a3f1c?auto=format&fit=crop&w=1400&q=80');"></div>
+  <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1598327100944-9d5de3993c25?auto=format&fit=crop&w=1400&q=80');"></div>
+  <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1593990402560-ec09c94a55d2?auto=format&fit=crop&w=1400&q=80');"></div>
+  <h1>Reliable HVAC Solutions</h1>
   <p>Heating • Cooling • Windows • Doors – Comfort you can trust all year round.</p>
+  <a href="#payment">Pay Online</a>
 </section>
 
 <section class="services">
@@ -174,11 +229,9 @@ footer {
   </div>
 </section>
 
-<section class="payment">
+<section class="payment" id="payment">
   <h2>Pay Online</h2>
-  <a id="square-pay-btn" href="https://square.link/u/EEOnNSPg?src=embed" target="_blank">
-    Pay Now
-  </a>
+  <a id="square-pay-btn" href="https://square.link/u/EEOnNSPg?src=embed" target="_blank">Pay Now</a>
 </section>
 
 <footer>
@@ -186,6 +239,16 @@ footer {
 </footer>
 
 <script>
+// Hero slider rotation
+let slides = document.querySelectorAll('.hero-slide');
+let currentSlide = 0;
+setInterval(() => {
+  slides[currentSlide].classList.remove('active');
+  currentSlide = (currentSlide + 1) % slides.length;
+  slides[currentSlide].classList.add('active');
+}, 5000); // change every 5 seconds
+
+// Square payment popup
 document.getElementById('square-pay-btn').addEventListener('click', function(e){
   const url = this.href;
   const redirectUrl = 'thank-you.html';
@@ -205,5 +268,3 @@ document.getElementById('square-pay-btn').addEventListener('click', function(e){
 
 </body>
 </html>
-
-

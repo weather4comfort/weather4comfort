@@ -143,33 +143,50 @@ header {
 
 /* PAYMENT SECTION */
 .payment {
-  text-align: center;
+  display: flex;
+  justify-content: center;
   padding: 50px 20px;
   background: #f4f4f4;
 }
 
-.payment h2 {
-  font-size: 28px;
-  margin-bottom: 20px;
+.payment-container {
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  width: 259px;
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  font-family: SQ Market, Helvetica, Arial, sans-serif;
+  text-align: center;
 }
 
-.payment p {
-  font-size: 16px;
-  margin-bottom: 30px;
+.payment-container p {
+  font-size: 18px;
+  line-height: 20px;
+  margin: 5px 0;
+}
+
+.payment-container p.bold {
+  font-weight: 600;
 }
 
 .square-btn {
-  background-color: #28a745;
-  color: white;
-  padding: 15px 40px;
+  display: inline-block;
   font-size: 18px;
+  line-height: 48px;
+  height: 48px;
+  color: #ffffff;
+  min-width: 212px;
+  background-color: #006aff;
+  text-align: center;
+  box-shadow: 0 0 0 1px rgba(0,0,0,.1) inset;
+  border-radius: 6px;
   text-decoration: none;
-  border-radius: 8px;
-  transition: background-color 0.3s;
-}
-
-.square-btn:hover {
-  background-color: #218838;
+  margin-top: 10px;
 }
 
 /* LIGHTBOX */
@@ -301,10 +318,17 @@ footer {
 </section>
 
 <section class="payment">
-  <h2>Pay for Services</h2>
-  <p>Securely pay for your HVAC services using our Square payment portal.</p>
-  <!-- Replace with your Square checkout URL -->
-  <a href="https://square.link/u/YOUR-SQUARE-CHECKOUT-LINK" target="_blank" class="square-btn">Pay Now</a>
+  <div class="payment-container">
+    <p>PAY HERE</p>
+    <p class="bold">Entered by customer</p>
+    <a id="embedded-checkout-modal-checkout-button"
+       target="_blank"
+       data-url="https://square.link/u/EEOnNSPg?src=embd"
+       href="https://square.link/u/EEOnNSPg?src=embed"
+       class="square-btn">
+      Pay now
+    </a>
+  </div>
 </section>
 
 <!-- LIGHTBOX -->
@@ -360,7 +384,33 @@ nextBtn.addEventListener('click', showNext);
 lightbox.addEventListener('click', e => {
   if (e.target === lightbox) closeLightbox();
 });
+
+// Square modal button
+function showCheckoutWindow(e) {
+  e.preventDefault();
+  const url = document.getElementById('embedded-checkout-modal-checkout-button').getAttribute('data-url');
+  const title = 'Square Payment Links';
+  const topWindow = window.top || window;
+
+  const dualScreenLeft = topWindow.screenLeft !== undefined ? topWindow.screenLeft : topWindow.screenX;
+  const dualScreenTop = topWindow.screenTop !== undefined ? topWindow.screenTop : topWindow.screenY;
+
+  const width = topWindow.innerWidth || document.documentElement.clientWidth || screen.width;
+  const height = topWindow.innerHeight || document.documentElement.clientHeight || screen.height;
+
+  const h = height * 0.75;
+  const w = 500;
+  const systemZoom = width / topWindow.screen.availWidth;
+  const left = (width - w) / 2 / systemZoom + dualScreenLeft;
+  const top = (height - h) / 2 / systemZoom + dualScreenTop;
+
+  const newWindow = window.open(url, title, `scrollbars=yes, width=${w / systemZoom}, height=${h / systemZoom}, top=${top}, left=${left}`);
+  if (window.focus) newWindow.focus();
+}
+
+document.getElementById('embedded-checkout-modal-checkout-button').addEventListener('click', showCheckoutWindow);
 </script>
 
 </body>
 </html>
+

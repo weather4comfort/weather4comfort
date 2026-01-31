@@ -3,125 +3,92 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>WEATHER4COMFORT HVAC INC</title>
+<title>Weather4Comfort HVAC Inc</title>
 
 <style>
 body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #333;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #222;
 }
+
+/* HEADER */
 header {
-    background: #2ec4c4;
-    padding: 20px;
-    text-align: center;
+  background: #0f6b6b;
+  color: white;
+  padding: 20px;
 }
-header img {
-    max-height: 70px;
-    display: block;
-    margin: 0 auto 10px;
-}
-header h1 {
-    margin: 0;
-    font-size: 24px;
-}
-nav {
-    background: #111;
-    text-align: center;
-    padding: 10px;
-}
-nav a {
-    color: #fff;
-    margin: 0 15px;
-    text-decoration: none;
-    font-weight: bold;
-}
-nav a:hover { color: #2ec4c4; }
 
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-area img {
+  max-width: 220px;
+}
+
+.company-name {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.phone {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* HERO */
 .hero {
-    background: linear-gradient(to right, #2ec4c4, #1b9aaa);
-    color: white;
-    text-align: center;
-    padding: 70px 20px;
-}
-.hero h2 { font-size: 36px; }
-.hero .btn {
-    background: #111;
-    color: white;
-    padding: 15px 30px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 18px;
+  background: #f4f4f4;
+  padding: 50px 20px;
+  text-align: center;
 }
 
-section {
-    padding: 50px 20px;
-    max-width: 1100px;
-    margin: auto;
-}
-h3 {
-    text-align: center;
-    color: #1b9aaa;
-    margin-bottom: 30px;
+.hero h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
 }
 
-.services, .gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
-.card {
-    border: 1px solid #ddd;
-    padding: 20px;
-    text-align: center;
-    border-radius: 5px;
-}
-.gallery img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    border-radius: 6px;
+.hero p {
+  font-size: 18px;
 }
 
-.contact {
-    background: #f4f4f4;
-    text-align: center;
-}
-form {
-    max-width: 500px;
-    margin: auto;
-}
-input, textarea {
-    width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-}
-button {
-    background: #111;
-    color: white;
-    border: none;
-    padding: 15px;
-    width: 100%;
-    font-size: 16px;
-}
-button:hover { background: #2ec4c4; color: black; }
-
-.map iframe {
-    width: 100%;
-    height: 350px;
-    border: 0;
+/* SERVICES */
+.services {
+  padding: 40px 20px;
+  text-align: center;
 }
 
+.services h2 {
+  margin-bottom: 30px;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.service-card {
+  border: 1px solid #ddd;
+  padding: 15px;
+}
+
+.service-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* FOOTER */
 footer {
-    background: #111;
-    color: white;
-    text-align: center;
-    padding: 15px;
-}
-a.email-link {
-    color: #1b9aaa;
-    text-decoration: none;
-    font-weight: bold;
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 20px;
 }
 </style>
 </head>
@@ -129,74 +96,50 @@ a.email-link {
 <body>
 
 <header>
-    
-    <h1>WEATHER4COMFORT HVAC INC</h1>
+  <div class="header-container">
+    <div class="logo-area">
+      <!-- LOGO IMAGE -->
+      <img src="images/weather4comfort-logo.png" alt="Weather4Comfort HVAC Inc Logo">
+      <div class="company-name">WEATHER4COMFORT HVAC INC</div>
+    </div>
+
+    <div class="phone">
+      📞 (224) 202-6367
+    </div>
+  </div>
 </header>
 
-<nav>
-    <a href="#services">Services</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#contact">Contact</a>
-</nav>
-
-<div class="hero">
-    <h2>Heating • Cooling • Windows • Doors</h2>
-    <p>Your comfort is our priority — all year round</p>
-    <a class="btn" href="tel:2242026367">📞 Call (224) 202-6367</a>
-</div>
-
-<section id="services">
-    <h3>Our Services</h3>
-    <div class="services">
-        <div class="card">❄️ Air Conditioning Installation & Repair</div>
-        <div class="card">🔥 Heating Systems & Furnaces</div>
-        <div class="card">🪟 Energy-Efficient Windows</div>
-        <div class="card">🚪 Door Installation & Replacement</div>
-    </div>
+<section class="hero">
+  <h1>Heating • Cooling • Windows • Doors</h1>
+  <p>Reliable comfort solutions you can trust all year round.</p>
 </section>
 
-<section id="gallery">
-    <h3>Our Work</h3>
-    <div class="gallery">
-        <img src="images/ac-installation.jpg" alt="Air Conditioning Installation">
-        ac-installation.jpg
-        furnace-repair.jpg
-        hvac-technician-working.jpg
-        <img src="https://images.unsplash.com/photo-1600488999585-e4364713b90a">
-        <img src="https://images.unsplash.com/photo-1592928302636-0a96d48a9b87">
+<section class="services">
+  <h2>Our Work</h2>
+
+  <div class="service-grid">
+    <div class="service-card">
+      <img src="images/ac-installation.jpg" alt="Air Conditioning Installation">
+      <h3>AC Installation</h3>
     </div>
-</section>
 
-<section id="contact" class="contact">
-    <h3>Free Estimate</h3>
-
-    <form>
-        <input type="text" placeholder="Your Name" required>
-        <input type="tel" placeholder="Phone Number" required>
-        <input type="email" placeholder="Email Address">
-        <textarea rows="4" placeholder="How can we help?"></textarea>
-        <button type="submit">Request Free Estimate</button>
-    </form>
-
-    <p>
-        📞 <strong>(224) 202-6367</strong><br>
-        📧 <a class="email-link" href="mailto:weather4comfort@gmail.com">weather4comfort@gmail.com</a><br>
-        📍 4250 W Lake Ave, Glenview, IL 60026
-    </p>
-
-    <div class="map">
-        <iframe 
-        src="https://www.google.com/maps?q=4250%20W%20Lake%20Ave%20Glenview%20IL%2060026&output=embed">
-        </iframe>
+    <div class="service-card">
+      <img src="images/furnace-repair.jpg" alt="Furnace Repair">
+      <h3>Furnace Repair</h3>
     </div>
+
+    <div class="service-card">
+      <img src="images/hvac-technician-working.jpg" alt="HVAC Technician Working">
+      <h3>HVAC Service</h3>
+    </div>
+  </div>
 </section>
 
 <footer>
-    © 2026 WEATHER4COMFORT HVAC INC
+  <p>© 2026 Weather4Comfort HVAC Inc. All Rights Reserved.</p>
 </footer>
 
 </body>
 </html>
-
 
 

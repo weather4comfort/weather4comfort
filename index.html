@@ -1,208 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Weather4Comfort HVAC Inc | Heating • Cooling</title>
-  <meta name="description" content="Weather4Comfort HVAC Inc — Professional Heating and Cooling services. 24/7 emergency service, installs, repairs, maintenance, and free estimates." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Weather4Comfort HVAC Inc | AC Repair & Furnace Repair | Glenview, IL</title>
+  <meta name="description" content="Weather4Comfort HVAC Inc provides professional heating and cooling services in Glenview, IL including AC repair, furnace repair, installation, maintenance, and 24/7 emergency HVAC service. Call (224) 202-6367 for a free estimate.">
+
   <style>
-    :root{
-      --text:#eaf0ff;
-      --muted:#b9c7ffcc;
-      --brand:#4aa3ff;
-      --brand2:#2ee59d;
-      --line:rgba(255,255,255,.10);
-      --radius:18px;
-      --max:1120px;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-      background:linear-gradient(180deg,#050a14 0%, #0b1220 50%, #060b15 100%);
-      color:var(--text);
-    }
-    img{max-width:100%;display:block}
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#0b1220;color:#fff}
     a{text-decoration:none;color:inherit}
-    .container{max-width:var(--max);margin:auto;padding:0 18px}
-    .btn{
-      padding:12px 18px;
-      border-radius:999px;
-      font-weight:700;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.06);
-      cursor:pointer;
-    }
-    .btn.primary{
-      background:linear-gradient(90deg,var(--brand),#7bc5ff);
-      color:#061027;
-      border:none;
-    }
-    header{
-      position:sticky;top:0;
-      background:rgba(5,10,20,.8);
-      backdrop-filter:blur(10px);
-      border-bottom:1px solid var(--line);
-    }
-    .nav{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:14px 0;
-    }
-    .brand{
-      display:flex;
-      gap:12px;
-      align-items:center;
-    }
-    .logo{
-      width:44px;height:44px;
-      border-radius:12px;
-      background:linear-gradient(135deg,#4aa3ff,#2ee59d);
-      display:grid;place-items:center;
-      font-weight:900;color:#001;
-    }
-    section{padding:40px 0}
-    h2{margin:0 0 10px}
-    p{color:var(--muted)}
-    .heroGrid{
-      display:grid;
-      grid-template-columns:1.2fr 1fr;
-      gap:20px;
-      align-items:center;
-    }
-    .heroImg{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      border-radius:var(--radius);
-    }
-    .grid3{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:18px;
-      margin-top:20px;
-    }
-    .card{
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      overflow:hidden;
-      background:rgba(255,255,255,.04);
-    }
-    .card img{height:180px;object-fit:cover}
+    header{background:#0f1a31;padding:18px 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;position:sticky;top:0;z-index:100}
+    header h1{margin:0;font-size:20px}
+    header span{color:#9bbcff;font-size:14px}
+    .call-btn{background:#4aa3ff;padding:12px 18px;border-radius:25px;font-weight:bold;color:#000}
+    section{max-width:1100px;margin:auto;padding:50px 20px}
+    h2{margin-bottom:10px}
+    p{color:#cfd8ff;line-height:1.6}
+    .hero{display:grid;grid-template-columns:1.2fr 1fr;gap:25px;align-items:center}
+    .hero img{width:100%;border-radius:18px}
+    .services{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;margin-top:30px}
+    .card{background:#101b33;border-radius:18px;overflow:hidden}
+    .card img{width:100%;height:180px;object-fit:cover}
     .card div{padding:16px}
-    .contact{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:20px;
-    }
-    input,textarea{
-      width:100%;
-      padding:12px;
-      border-radius:12px;
-      border:none;
-      margin-bottom:12px;
-    }
-    footer{
-      border-top:1px solid var(--line);
-      padding:20px 0;
-      text-align:center;
-      color:var(--muted);
-    }
-    @media(max-width:900px){
-      .heroGrid,.contact,.grid3{grid-template-columns:1fr}
-    }
+    .reviews{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:30px}
+    .review-card{background:#101b33;border-radius:18px;padding:18px}
+    .stars{color:#ffcc00;letter-spacing:2px;margin-bottom:8px}
+    .yelp-btn{display:inline-block;margin-top:15px;background:#d32323;color:#fff;padding:12px 18px;border-radius:25px;font-weight:bold}
+    .contact{display:grid;grid-template-columns:1fr 1fr;gap:25px}
+    input,textarea{width:100%;padding:12px;margin-bottom:12px;border-radius:10px;border:none}
+    button{background:#4aa3ff;padding:12px;border:none;border-radius:25px;font-weight:bold;cursor:pointer}
+    footer{text-align:center;padding:20px;background:#060b15;color:#aaa}
+    @media(max-width:900px){.hero,.contact{grid-template-columns:1fr}}
   </style>
 </head>
 
 <body>
 
 <header>
-  <div class="container nav">
-    <div class="brand">
-      <div class="logo">W4C</div>
-      <div>
-        <strong>WEATHER4COMFORT HVAC INC</strong><br>
-        <small>Heating • Cooling</small>
-      </div>
-    </div>
-    <a class="btn primary" href="tel:2242026367">Call (224) 202-6367</a>
+  <div>
+    <h1>WEATHER4COMFORT HVAC INC</h1>
+    <span>Heating • Cooling • 24/7 Emergency Service</span>
   </div>
+  <a class="call-btn" href="tel:2242026367">Call (224) 202-6367</a>
 </header>
 
-<section>
-  <div class="container heroGrid">
-    <div>
-      <h2>Comfort solutions for every season</h2>
-      <p>Professional Heating & Cooling services you can trust. Fast response, clean work, and honest pricing.</p>
-      <p>✔ 24/7 Emergency Service<br>✔ Insured & Bonded<br>✔ 10-Year Warranty</p>
-      <a class="btn primary" href="#contact">Free Estimate</a>
+<section class="hero">
+  <div>
+    <h2>Reliable Heating & Cooling Services</h2>
+    <p>
+      Professional HVAC repair, installation, and maintenance.
+      Serving Glenview and nearby areas with fast response,
+      clean workmanship, and honest pricing.
+    </p>
+    <p>
+      ✔ 24/7 Emergency Service<br>
+      ✔ Insured & Bonded<br>
+      ✔ 10-Year Additional Warranty
+    </p>
+    <a class="call-btn" href="#contact">Free Estimate</a>
+  </div>
+
+  <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=1600&q=80"
+       alt="HVAC contractor performing service">
+</section>
+
+<section id="services">
+  <h2>Our HVAC Services</h2>
+
+  <div class="services">
+
+    <!-- REAL HVAC SERVICE IMAGE YOU PROVIDED -->
+    <div class="card">
+      <img src="540b7637-d578-4613-a368-05335bff9551.png"
+           alt="HVAC technician performing air conditioning service">
+      <div>
+        <h3>Professional HVAC Service</h3>
+        <p>
+          Hands-on diagnostics and repairs performed by experienced HVAC technicians
+          to keep your system running efficiently.
+        </p>
+      </div>
     </div>
-    <img class="heroImg" src="41d01333-00dd-4a84-88a7-74656948c016.png" alt="Comfortable home interior">
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1200&q=80">
+      <div>
+        <h3>AC Repair & Installation</h3>
+        <p>Fast AC repairs and efficient system installations.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=80">
+      <div>
+        <h3>Furnace Repair & Replacement</h3>
+        <p>Reliable heating solutions to keep you warm.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1581579185169-7b2b9d52c2d8?auto=format&fit=crop&w=1200&q=80">
+      <div>
+        <h3>Maintenance & Tune-Ups</h3>
+        <p>Prevent breakdowns and lower energy costs.</p>
+      </div>
+    </div>
+
   </div>
 </section>
 
-<section>
-  <div class="container">
-    <h2>Our Services</h2>
-    <div class="grid3">
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=1200&q=80">
-        <div>
-          <h3>Air Conditioning Installation</h3>
-          <p>Efficient AC installs and replacements.</p>
-        </div>
-      </div>
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=80">
-        <div>
-          <h3>Furnace Repair & Replacement</h3>
-          <p>Safe, reliable heating solutions.</p>
-        </div>
-      </div>
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1581579185169-7b2b9d52c2d8?auto=format&fit=crop&w=1200&q=80">
-        <div>
-          <h3>Maintenance & Tune-Ups</h3>
-          <p>Prevent breakdowns and lower energy bills.</p>
-        </div>
-      </div>
+<section id="reviews">
+  <h2>Customer Reviews</h2>
+  <p>See what our customers are saying on Yelp.</p>
+
+  <div class="reviews">
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p>“Fast, reliable, and professional service. Highly recommend.”</p>
+      <strong>— Yelp Customer</strong>
+    </div>
+
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p>“Emergency service was quick and the technician was very knowledgeable.”</p>
+      <strong>— Yelp Customer</strong>
     </div>
   </div>
+
+  <!-- REPLACE WITH YOUR REAL YELP LINK -->
+  <a class="yelp-btn" href="https://www.yelp.com" target="_blank">
+    ⭐ Read More Reviews on Yelp
+  </a>
 </section>
 
 <section id="contact">
-  <div class="container contact">
+  <h2>Contact Us</h2>
+
+  <div class="contact">
     <div>
-      <h2>Contact Us</h2>
-      <p>📍 4350 W Lake Ave, Glenview, IL 60026<br>
-         📞 Jonathan Jones — (224) 202-6367</p>
+      <p>
+        📍 4350 W Lake Ave, Glenview, IL 60026<br>
+        📞 Jonathan Jones — (224) 202-6367<br>
+        ✉️ weather4comfort@gmail.com
+      </p>
     </div>
 
     <form id="contactForm">
       <input id="name" placeholder="Your Name" required>
       <input id="email" type="email" placeholder="Your Email" required>
       <textarea id="message" placeholder="How can we help you?" required></textarea>
-      <button class="btn primary" type="submit">Send Message</button>
+      <button type="submit">Send Message</button>
     </form>
   </div>
 </section>
 
 <footer>
-  © <span id="yr"></span> Weather4Comfort HVAC Inc. All Rights Reserved.
+  © <span id="year"></span> Weather4Comfort HVAC Inc. All Rights Reserved.
 </footer>
 
 <script>
-document.getElementById("yr").textContent = new Date().getFullYear();
-document.getElementById("contactForm").addEventListener("submit", function(e){
-  e.preventDefault();
-  const body =
-    "Name: " + name.value + "%0D%0A" +
-    "Email: " + email.value + "%0D%0A%0D%0A" +
-    message.value;
-  window.location.href =
-    "mailto:weather4comfort@gmail.com?subject=HVAC Estimate Request&body=" + body;
-});
+  document.getElementById("year").textContent = new Date().getFullYear();
+  document.getElementById("contactForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    const body =
+      "Name: " + name.value + "%0D%0A" +
+      "Email: " + email.value + "%0D%0A%0D%0A" +
+      message.value;
+
+    window.location.href =
+      "mailto:weather4comfort@gmail.com?subject=HVAC Service Request&body=" + body;
+  });
 </script>
 
 </body>

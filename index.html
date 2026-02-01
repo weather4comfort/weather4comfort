@@ -26,8 +26,7 @@
     .reviews{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:30px}
     .review-card{background:#101b33;border-radius:18px;padding:18px}
     .stars{color:#ffcc00;letter-spacing:2px;margin-bottom:8px}
-    .yelp-wrap{margin-top:25px}
-    .yelp-btn{background:#d32323;color:#fff;padding:12px 18px;border-radius:25px;font-weight:bold;display:inline-flex;align-items:center;gap:10px}
+    .yelp-btn{display:inline-block;margin-top:15px;background:#d32323;color:#fff;padding:12px 18px;border-radius:25px;font-weight:bold}
     .contact{display:grid;grid-template-columns:1fr 1fr;gap:25px}
     input,textarea{width:100%;padding:12px;margin-bottom:12px;border-radius:10px;border:none}
     button{background:#4aa3ff;padding:12px;border:none;border-radius:25px;font-weight:bold;cursor:pointer}
@@ -62,7 +61,7 @@
     <a class="call-btn" href="#contact">Free Estimate</a>
   </div>
 
-  <!-- WORKING TECHNICIAN -->
+  <!-- WORKING TECHNICIAN (NO POSED PORTRAITS) -->
   <img
     src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1600&q=80"
     alt="HVAC technician actively servicing an air conditioning unit">
@@ -72,38 +71,44 @@
   <h2>Our HVAC Services</h2>
 
   <div class="services">
+
+    <!-- REAL HVAC SERVICE IMAGE YOU PROVIDED -->
     <div class="card">
       <img src="540b7637-d578-4613-a368-05335bff9551.png"
            alt="HVAC technician performing air conditioning service on outdoor unit">
       <div>
         <h3>Professional HVAC Service</h3>
-        <p>Hands-on diagnostics and real repairs performed on-site by experienced technicians.</p>
+        <p>
+          Hands-on diagnostics and repairs performed by experienced HVAC technicians
+          to keep your system running efficiently.
+        </p>
       </div>
     </div>
 
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=1200&q=80">
+      <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=1200&q=80" alt="AC service work">
       <div>
         <h3>AC Repair & Installation</h3>
-        <p>Active troubleshooting, system replacements, and efficient AC installs.</p>
+        <p>Fast AC repairs and efficient system installations.</p>
       </div>
     </div>
 
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=80">
+      <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=80" alt="Furnace service work">
       <div>
         <h3>Furnace Repair & Replacement</h3>
-        <p>Technicians working directly on furnaces to restore safe heating.</p>
+        <p>Reliable heating solutions to keep you warm.</p>
       </div>
     </div>
 
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1581579185169-7b2b9d52c2d8?auto=format&fit=crop&w=1200&q=80">
+      <img src="https://images.unsplash.com/photo-1581579185169-7b2b9d52c2d8?auto=format&fit=crop&w=1200&q=80" alt="HVAC maintenance work">
       <div>
         <h3>Maintenance & Tune-Ups</h3>
-        <p>Preventive service performed hands-on to extend system life.</p>
+        <p>Prevent breakdowns and lower energy costs.</p>
       </div>
     </div>
+
   </div>
 </section>
 
@@ -125,11 +130,13 @@
     </div>
   </div>
 
-  <div class="yelp-wrap">
-    <a class="yelp-btn" href="https://www.yelp.com/biz/weather-4-comfort-hvac-glenview" target="_blank">
-      ⭐ Read More Reviews on Yelp
-    </a>
-  </div>
+  <!-- ✅ FIXED: Goes straight to your Yelp business page -->
+  <a class="yelp-btn"
+     href="https://www.yelp.com/biz/weather-4-comfort-hvac-glenview"
+     target="_blank"
+     rel="noopener noreferrer">
+    ⭐ Read More Reviews on Yelp
+  </a>
 </section>
 
 <section id="contact">

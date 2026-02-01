@@ -3,425 +3,207 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Weather4Comfort HVAC Inc | Heating • Cooling • Windows • Doors</title>
-  <meta name="description" content="Weather4Comfort HVAC Inc — Heating, Cooling, Windows, and Doors. 24/7 emergency service, installs, repairs, maintenance, and estimates." />
+  <title>Weather4Comfort HVAC Inc | Heating • Cooling</title>
+  <meta name="description" content="Weather4Comfort HVAC Inc — Professional Heating and Cooling services. 24/7 emergency service, installs, repairs, maintenance, and free estimates." />
   <style>
     :root{
-      --bg:#0b1220;
-      --card:#101b33;
-      --soft:#0f1a31;
       --text:#eaf0ff;
       --muted:#b9c7ffcc;
       --brand:#4aa3ff;
       --brand2:#2ee59d;
       --line:rgba(255,255,255,.10);
-      --shadow: 0 12px 28px rgba(0,0,0,.35);
       --radius:18px;
       --max:1120px;
     }
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:linear-gradient(180deg,#050a14 0%, #0b1220 50%, #060b15 100%);color:var(--text)}
-    a{color:inherit;text-decoration:none}
-    img{max-width:100%;display:block}
-    .container{max-width:var(--max);margin:0 auto;padding:0 18px}
-    .btn{
-      display:inline-flex;gap:10px;align-items:center;justify-content:center;
-      padding:12px 16px;border-radius:999px;font-weight:700;
-      border:1px solid var(--line); background:rgba(255,255,255,.06);
-      transition:.2s transform,.2s background,.2s border-color;
-      cursor:pointer;
-      white-space:nowrap;
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      background:linear-gradient(180deg,#050a14 0%, #0b1220 50%, #060b15 100%);
+      color:var(--text);
     }
-    .btn:hover{transform:translateY(-1px);background:rgba(255,255,255,.10);border-color:rgba(255,255,255,.20)}
-    .btn.primary{background:linear-gradient(90deg,var(--brand),#7bc5ff);border-color:transparent;color:#061027}
-    .btn.primary:hover{background:linear-gradient(90deg,#2d8fff,#7bc5ff)}
-    .btn.green{background:linear-gradient(90deg,var(--brand2),#7fffd1);border-color:transparent;color:#062015}
-    .pill{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.05);color:var(--muted);font-weight:600}
-    .topbar{
-      position:sticky;top:0;z-index:50;background:rgba(5,10,20,.72);
-      backdrop-filter: blur(10px); border-bottom:1px solid var(--line);
+    img{max-width:100%;display:block}
+    a{text-decoration:none;color:inherit}
+    .container{max-width:var(--max);margin:auto;padding:0 18px}
+    .btn{
+      padding:12px 18px;
+      border-radius:999px;
+      font-weight:700;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.06);
+      cursor:pointer;
+    }
+    .btn.primary{
+      background:linear-gradient(90deg,var(--brand),#7bc5ff);
+      color:#061027;
+      border:none;
+    }
+    header{
+      position:sticky;top:0;
+      background:rgba(5,10,20,.8);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid var(--line);
     }
     .nav{
-      display:flex;align-items:center;justify-content:space-between;
-      padding:12px 0;gap:14px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:14px 0;
     }
     .brand{
-      display:flex;align-items:center;gap:12px;min-width:240px;
+      display:flex;
+      gap:12px;
+      align-items:center;
     }
     .logo{
-      width:44px;height:44px;border-radius:12px;
-      background:radial-gradient(circle at 30% 20%,#ffffff 0%,#cfe6ff 25%,#4aa3ff 60%,#1b3a78 100%);
-      box-shadow: 0 10px 22px rgba(74,163,255,.28);
+      width:44px;height:44px;
+      border-radius:12px;
+      background:linear-gradient(135deg,#4aa3ff,#2ee59d);
       display:grid;place-items:center;
-      border:1px solid rgba(255,255,255,.18);
-      font-weight:900;color:#041027;
+      font-weight:900;color:#001;
     }
-    .brand h1{margin:0;font-size:15px;line-height:1.1}
-    .brand small{display:block;color:var(--muted);font-weight:600;margin-top:2px}
-    .links{display:flex;gap:18px;align-items:center}
-    .links a{color:var(--muted);font-weight:700;font-size:14px}
-    .links a:hover{color:var(--text)}
-    .cta{display:flex;gap:10px;align-items:center}
-
-    .hero{
-      padding:38px 0 22px;
-      position:relative; overflow:hidden;
-    }
+    section{padding:40px 0}
+    h2{margin:0 0 10px}
+    p{color:var(--muted)}
     .heroGrid{
-      display:grid;grid-template-columns: 1.25fr .95fr; gap:18px; align-items:stretch;
-    }
-    .heroCard{
-      border:1px solid var(--line); border-radius:var(--radius);
-      background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.03));
-      box-shadow: var(--shadow);
-      overflow:hidden;
-    }
-    .heroLeft{padding:26px}
-    .heroTitle{font-size:42px;line-height:1.05;margin:12px 0 10px}
-    .heroTitle span{background:linear-gradient(90deg,var(--brand),var(--brand2));-webkit-background-clip:text;background-clip:text;color:transparent}
-    .heroSub{color:var(--muted);font-size:16px;line-height:1.6;margin:0 0 18px}
-    .badges{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 18px}
-    .heroActions{display:flex;flex-wrap:wrap;gap:10px}
-    .heroRight{
-      display:grid;grid-template-rows: 1fr; min-height:420px;
+      display:grid;
+      grid-template-columns:1.2fr 1fr;
+      gap:20px;
+      align-items:center;
     }
     .heroImg{
-      width:100%;height:100%;object-fit:cover;
-      transform:scale(1.02);
-      filter:saturate(1.05) contrast(1.03);
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      border-radius:var(--radius);
     }
-    .overlay{
-      position:absolute;inset:-120px -120px auto auto;width:420px;height:420px;
-      background:radial-gradient(circle, rgba(46,229,157,.18), rgba(74,163,255,.12), transparent 60%);
-      pointer-events:none;
+    .grid3{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+      margin-top:20px;
     }
-
-    .section{padding:26px 0}
-    .section h2{margin:0 0 6px;font-size:28px}
-    .section p.lead{margin:0 0 14px;color:var(--muted);line-height:1.6}
-
-    .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
     .card{
-      border:1px solid var(--line);border-radius:var(--radius);
-      background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));
-      box-shadow: 0 10px 24px rgba(0,0,0,.25);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
       overflow:hidden;
+      background:rgba(255,255,255,.04);
     }
-    .card .imgWrap{height:150px;background:#0a1020}
-    .card img{width:100%;height:100%;object-fit:cover}
-    .card .pad{padding:14px}
-    .card h3{margin:0 0 6px;font-size:16px}
-    .card p{margin:0;color:var(--muted);font-size:14px;line-height:1.5}
-
-    .split{
-      display:grid;grid-template-columns: 1fr 1fr; gap:14px; align-items:stretch;
-    }
-    .checklist{padding:18px}
-    .checklist ul{margin:10px 0 0;padding:0;list-style:none;display:grid;gap:10px}
-    .checklist li{
-      display:flex;gap:10px;align-items:flex-start;
-      padding:10px;border-radius:14px;background:rgba(255,255,255,.04);
-      border:1px solid rgba(255,255,255,.08);
-    }
-    .dot{
-      width:10px;height:10px;border-radius:999px;background:linear-gradient(90deg,var(--brand),var(--brand2));
-      margin-top:5px;flex:0 0 auto;
-    }
-    .mini{color:var(--muted);font-size:14px;line-height:1.5}
-
-    .testimonials{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-    .quote{padding:16px}
-    .quote p{margin:0 0 10px;color:var(--muted);line-height:1.6}
-    .quote strong{display:block}
-
+    .card img{height:180px;object-fit:cover}
+    .card div{padding:16px}
     .contact{
-      display:grid;grid-template-columns:1.1fr .9fr;gap:14px;align-items:stretch;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:20px;
     }
-    .contact .pad{padding:18px}
-    .formRow{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-    label{display:block;font-weight:700;font-size:13px;color:var(--muted);margin:8px 0 6px}
     input,textarea{
-      width:100%;padding:12px 12px;border-radius:14px;
-      border:1px solid rgba(255,255,255,.14);
-      background:rgba(0,0,0,.25);color:var(--text);
-      outline:none;
+      width:100%;
+      padding:12px;
+      border-radius:12px;
+      border:none;
+      margin-bottom:12px;
     }
-    textarea{min-height:110px;resize:vertical}
-    input:focus,textarea:focus{border-color:rgba(74,163,255,.55);box-shadow:0 0 0 3px rgba(74,163,255,.14)}
-    .fine{color:var(--muted);font-size:12px;line-height:1.5;margin-top:10px}
-    footer{padding:22px 0;color:var(--muted);border-top:1px solid var(--line);margin-top:18px}
-
-    /* mobile */
-    @media (max-width: 980px){
-      .heroGrid{grid-template-columns:1fr; }
-      .heroRight{min-height:260px}
-      .grid4{grid-template-columns:repeat(2,1fr)}
-      .split{grid-template-columns:1fr}
-      .testimonials{grid-template-columns:1fr}
-      .contact{grid-template-columns:1fr}
-      .links{display:none}
-      .brand{min-width:auto}
-      .heroTitle{font-size:34px}
+    footer{
+      border-top:1px solid var(--line);
+      padding:20px 0;
+      text-align:center;
+      color:var(--muted);
     }
-    @media (max-width: 520px){
-      .grid4{grid-template-columns:1fr}
-      .formRow{grid-template-columns:1fr}
+    @media(max-width:900px){
+      .heroGrid,.contact,.grid3{grid-template-columns:1fr}
     }
   </style>
 </head>
 
 <body>
-  <div class="topbar">
-    <div class="container">
-      <div class="nav">
-        <div class="brand">
-          <div class="logo" aria-label="Weather4Comfort">W4C</div>
-          <div>
-            <h1>WEATHER4COMFORT HVAC INC</h1>
-            <small>Heating • Cooling • Windows • Doors</small>
-          </div>
-        </div>
 
-        <div class="links">
-          <a href="#services">Services</a>
-          <a href="#why">Why Us</a>
-          <a href="#testimonials">Testimonials</a>
-          <a href="#contact">Contact</a>
-        </div>
+<header>
+  <div class="container nav">
+    <div class="brand">
+      <div class="logo">W4C</div>
+      <div>
+        <strong>WEATHER4COMFORT HVAC INC</strong><br>
+        <small>Heating • Cooling</small>
+      </div>
+    </div>
+    <a class="btn primary" href="tel:2242026367">Call (224) 202-6367</a>
+  </div>
+</header>
 
-        <div class="cta">
-          <a class="btn" href="tel:2242026367">Call: (224) 202-6367</a>
-          <a class="btn primary" href="#contact">Free Estimate</a>
+<section>
+  <div class="container heroGrid">
+    <div>
+      <h2>Comfort solutions for every season</h2>
+      <p>Professional Heating & Cooling services you can trust. Fast response, clean work, and honest pricing.</p>
+      <p>✔ 24/7 Emergency Service<br>✔ Insured & Bonded<br>✔ 10-Year Warranty</p>
+      <a class="btn primary" href="#contact">Free Estimate</a>
+    </div>
+    <img class="heroImg" src="41d01333-00dd-4a84-88a7-74656948c016.png" alt="Comfortable home interior">
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>Our Services</h2>
+    <div class="grid3">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=1200&q=80">
+        <div>
+          <h3>Air Conditioning Installation</h3>
+          <p>Efficient AC installs and replacements.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=80">
+        <div>
+          <h3>Furnace Repair & Replacement</h3>
+          <p>Safe, reliable heating solutions.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1581579185169-7b2b9d52c2d8?auto=format&fit=crop&w=1200&q=80">
+        <div>
+          <h3>Maintenance & Tune-Ups</h3>
+          <p>Prevent breakdowns and lower energy bills.</p>
         </div>
       </div>
     </div>
   </div>
+</section>
 
-  <header class="hero" id="top">
-    <div class="overlay"></div>
-    <div class="container">
-      <div class="heroGrid">
-        <div class="heroCard heroLeft">
-          <div class="pill">✅ 24/7 Emergency Service • Same-day options</div>
-          <h2 class="heroTitle">Comfort solutions for <span>every season</span>.</h2>
-          <p class="heroSub">
-            Full-service Heating & Cooling plus professional Window and Door installs.
-            Reliable work, clean installs, and honest pricing.
-          </p>
-
-          <div class="badges">
-            <span class="pill">⭐ 10-Year Additional Warranty</span>
-            <span class="pill">🛡️ Insured & Bonded</span>
-            <span class="pill">🏠 Residential & Commercial</span>
-          </div>
-
-          <div class="heroActions">
-            <a class="btn primary" href="tel:2242026367">Call Now</a>
-            <a class="btn green" href="#services">View Services</a>
-            <a class="btn" href="#contact">Send a Message</a>
-          </div>
-
-          <p class="fine">
-            Service Area: Glenview & nearby suburbs • Address: 4350 W Lake Ave, Glenview, IL 60026
-          </p>
-        </div>
-
-        <div class="heroCard heroRight" aria-label="Technician working">
-          <img
-            class="heroImg"
-            src="https://images.unsplash.com/photo-1581092335397-9fa3411088d2?auto=format&fit=crop&w=1400&q=80"
-            alt="HVAC technician servicing an air conditioning unit"
-            loading="lazy"
-          />
-        </div>
-      </div>
+<section id="contact">
+  <div class="container contact">
+    <div>
+      <h2>Contact Us</h2>
+      <p>📍 4350 W Lake Ave, Glenview, IL 60026<br>
+         📞 Jonathan Jones — (224) 202-6367</p>
     </div>
-  </header>
 
-  <section class="section" id="services">
-    <div class="container">
-      <h2>Services</h2>
-      <p class="lead">Heating, cooling, windows, and doors — done clean, safe, and up to code.</p>
+    <form id="contactForm">
+      <input id="name" placeholder="Your Name" required>
+      <input id="email" type="email" placeholder="Your Email" required>
+      <textarea id="message" placeholder="How can we help you?" required></textarea>
+      <button class="btn primary" type="submit">Send Message</button>
+    </form>
+  </div>
+</section>
 
-      <div class="grid4">
-        <div class="card">
-          <div class="imgWrap">
-            <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=1200&q=80" alt="AC installation" loading="lazy">
-          </div>
-          <div class="pad">
-            <h3>Air Conditioning Installation</h3>
-            <p>New AC installs, replacements, and system sizing for efficiency and comfort.</p>
-          </div>
-        </div>
+<footer>
+  © <span id="yr"></span> Weather4Comfort HVAC Inc. All Rights Reserved.
+</footer>
 
-        <div class="card">
-          <div class="imgWrap">
-            <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=80" alt="Furnace repair" loading="lazy">
-          </div>
-          <div class="pad">
-            <h3>Furnace Repair & Replacement</h3>
-            <p>Fast diagnosis, safe repairs, and high-performance furnace replacements.</p>
-          </div>
-        </div>
+<script>
+document.getElementById("yr").textContent = new Date().getFullYear();
+document.getElementById("contactForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  const body =
+    "Name: " + name.value + "%0D%0A" +
+    "Email: " + email.value + "%0D%0A%0D%0A" +
+    message.value;
+  window.location.href =
+    "mailto:weather4comfort@gmail.com?subject=HVAC Estimate Request&body=" + body;
+});
+</script>
 
-        <div class="card">
-          <div class="imgWrap">
-            <img src="https://images.unsplash.com/photo-1581579185169-7b2b9d52c2d8?auto=format&fit=crop&w=1200&q=80" alt="HVAC maintenance" loading="lazy">
-          </div>
-          <div class="pad">
-            <h3>Maintenance & Tune-Ups</h3>
-            <p>Seasonal checkups to prevent breakdowns and reduce energy costs.</p>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="imgWrap">
-            <img src="https://images.unsplash.com/photo-1615873968403-89e068629265?auto=format&fit=crop&w=1200&q=80" alt="Window installation" loading="lazy">
-          </div>
-          <div class="pad">
-            <h3>Windows & Doors</h3>
-            <p>Install and replacement for better insulation, security, and curb appeal.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="why">
-    <div class="container">
-      <div class="split">
-        <div class="card checklist">
-          <h2>Why choose us</h2>
-          <p class="mini">We focus on quality workmanship, communication, and long-term value.</p>
-          <ul>
-            <li><span class="dot"></span><div><strong>Transparent estimates</strong><div class="mini">Clear scope and pricing — no surprises.</div></div></li>
-            <li><span class="dot"></span><div><strong>Skilled technicians</strong><div class="mini">Careful installs, clean job sites, and respect for your home.</div></div></li>
-            <li><span class="dot"></span><div><strong>Emergency availability</strong><div class="mini">24/7 options when your heat or AC goes down.</div></div></li>
-            <li><span class="dot"></span><div><strong>Warranty support</strong><div class="mini">Backed work with strong manufacturer + labor support.</div></div></li>
-          </ul>
-        </div>
-
-        <div class="card" style="overflow:hidden">
-          <img
-            src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1400&q=80"
-            alt="Technician working on HVAC system"
-            loading="lazy"
-            style="width:100%;height:100%;object-fit:cover;min-height:360px"
-          />
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="testimonials">
-    <div class="container">
-      <h2>Customer Testimonials</h2>
-      <p class="lead">A few words from homeowners and customers we’ve helped.</p>
-
-      <div class="testimonials">
-        <div class="card quote">
-          <p>“Fast, reliable, and professional. They explained everything and got us comfortable again quickly.”</p>
-          <strong>— Sarah M.</strong>
-        </div>
-        <div class="card quote">
-          <p>“Installation was clean and on time. Great communication and fair pricing.”</p>
-          <strong>— Mark T.</strong>
-        </div>
-        <div class="card quote">
-          <p>“Emergency service was a lifesaver. Technician was respectful and fixed it the same night.”</p>
-          <strong>— Linda K.</strong>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="contact">
-    <div class="container">
-      <div class="contact">
-        <div class="card">
-          <div class="pad">
-            <h2>Contact</h2>
-            <p class="lead">Request an estimate or send a message. We’ll get back to you ASAP.</p>
-
-            <div class="pill" style="margin-bottom:10px;">📍 4350 W Lake Ave, Glenview, IL 60026</div>
-            <div class="pill" style="margin-bottom:16px;">📞 Jonathan Jones — <a href="tel:2242026367" style="text-decoration:underline">224-202-6367</a></div>
-
-            <!-- Simple mailto form (works without any server). -->
-            <form id="contactForm">
-              <div class="formRow">
-                <div>
-                  <label for="name">Your Name</label>
-                  <input id="name" name="name" placeholder="Your name" required />
-                </div>
-                <div>
-                  <label for="email">Your Email</label>
-                  <input id="email" name="email" type="email" placeholder="you@email.com" required />
-                </div>
-              </div>
-
-              <label for="service">What do you need help with?</label>
-              <input id="service" name="service" placeholder="Heating, Cooling, Windows, Doors…" />
-
-              <label for="message">Your Message</label>
-              <textarea id="message" name="message" placeholder="Tell us what’s going on and your preferred time to call…" required></textarea>
-
-              <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px">
-                <button class="btn primary" type="submit">Send Message</button>
-                <a class="btn" href="tel:2242026367">Call Now</a>
-              </div>
-
-              <p class="fine">
-                This form uses your email app (no server needed). If nothing opens, call or text instead.
-              </p>
-            </form>
-          </div>
-        </div>
-
-        <div class="card" style="overflow:hidden">
-          <img
-            src="https://images.unsplash.com/photo-1585128792020-803d29415281?auto=format&fit=crop&w=1400&q=80"
-            alt="Home exterior with windows and door"
-            loading="lazy"
-            style="width:100%;height:100%;object-fit:cover;min-height:420px"
-          />
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container" style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;align-items:center">
-      <div>© <span id="yr"></span> Weather4Comfort HVAC Inc. All Rights Reserved.</div>
-      <div style="display:flex;gap:12px;align-items:center">
-        <a class="btn" href="#top">Back to top ↑</a>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    // Year
-    document.getElementById("yr").textContent = new Date().getFullYear();
-
-    // Mailto form (no backend needed)
-    document.getElementById("contactForm").addEventListener("submit", function(e){
-      e.preventDefault();
-      const name = encodeURIComponent(document.getElementById("name").value.trim());
-      const email = encodeURIComponent(document.getElementById("email").value.trim());
-      const service = encodeURIComponent(document.getElementById("service").value.trim());
-      const message = encodeURIComponent(document.getElementById("message").value.trim());
-
-      const subject = encodeURIComponent("Estimate Request - Weather4Comfort");
-      const body =
-        "Name: " + name + "%0D%0A" +
-        "Email: " + email + "%0D%0A" +
-        "Service Needed: " + service + "%0D%0A%0D%0A" +
-        "Message:%0D%0A" + message;
-
-      // CHANGE THIS to your business email if you have one:
-      const to = "info@yourdomain.com";
-
-      window.location.href = "mailto:" + to + "?subject=" + subject + "&body=" + body;
-    });
-  </script>
 </body>
 </html>

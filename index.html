@@ -17,12 +17,9 @@
     section{max-width:1100px;margin:auto;padding:50px 20px}
     h2{margin-bottom:10px}
     p{color:#cfd8ff;line-height:1.6}
-    .hero{display:grid;grid-template-columns:1.2fr 1fr;gap:25px;align-items:center}
-    .hero img{width:100%;border-radius:18px}
+    .hero{display:grid;grid-template-columns:1fr;gap:25px}
     .services{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;margin-top:30px}
-    .card{background:#101b33;border-radius:18px;overflow:hidden}
-    .card img{width:100%;height:180px;object-fit:cover}
-    .card div{padding:16px}
+    .card{background:#101b33;border-radius:18px;padding:16px}
     .reviews{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:30px}
     .review-card{background:#101b33;border-radius:18px;padding:18px}
     .stars{color:#ffcc00;letter-spacing:2px;margin-bottom:8px}
@@ -31,7 +28,7 @@
     input,textarea{width:100%;padding:12px;margin-bottom:12px;border-radius:10px;border:none}
     button{background:#4aa3ff;padding:12px;border:none;border-radius:25px;font-weight:bold;cursor:pointer}
     footer{text-align:center;padding:20px;background:#060b15;color:#aaa}
-    @media(max-width:900px){.hero,.contact{grid-template-columns:1fr}}
+    @media(max-width:900px){.contact{grid-template-columns:1fr}}
   </style>
 </head>
 
@@ -45,7 +42,6 @@
   <a class="call-btn" href="tel:2242026367">Call (224) 202-6367</a>
 </header>
 
-<!-- HERO: HVAC TECHS WORKING (NO HOME INTERIOR) -->
 <section class="hero">
   <div>
     <h2>Reliable Heating & Cooling Services</h2>
@@ -61,60 +57,36 @@
     </p>
     <a class="call-btn" href="#contact">Free Estimate</a>
   </div>
-
-  <img
-    src="https://images.unsplash.com/photo-1600566752734-2a0cd53cfa0c?auto=format&fit=crop&w=1600&q=80"
-    alt="HVAC technicians working on indoor heating system">
 </section>
 
 <section id="services">
   <h2>Our HVAC Services</h2>
 
   <div class="services">
-
-    <!-- YOUR REAL SERVICE IMAGE -->
     <div class="card">
-      <img src="540b7637-d578-4613-a368-05335bff9551.png"
-           alt="HVAC technician performing air conditioning service">
-      <div>
-        <h3>Professional HVAC Service</h3>
-        <p>Hands-on diagnostics and real repairs performed by experienced technicians.</p>
-      </div>
+      <h3>Professional HVAC Service</h3>
+      <p>Hands-on diagnostics and repairs performed by experienced HVAC technicians.</p>
     </div>
 
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=1200&q=80"
-           alt="Technician repairing AC unit">
-      <div>
-        <h3>AC Repair & Installation</h3>
-        <p>Active troubleshooting, repairs, and system installations.</p>
-      </div>
+      <h3>AC Repair & Installation</h3>
+      <p>Fast AC repairs and efficient system installations.</p>
     </div>
 
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=80"
-           alt="Furnace repair technician working">
-      <div>
-        <h3>Furnace Repair & Replacement</h3>
-        <p>Technicians restoring safe and reliable heat.</p>
-      </div>
+      <h3>Furnace Repair & Replacement</h3>
+      <p>Reliable heating solutions to keep you warm.</p>
     </div>
 
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1581579185169-7b2b9d52c2d8?auto=format&fit=crop&w=1200&q=80"
-           alt="HVAC maintenance service">
-      <div>
-        <h3>Maintenance & Tune-Ups</h3>
-        <p>Preventative service to extend system life.</p>
-      </div>
+      <h3>Maintenance & Tune-Ups</h3>
+      <p>Prevent breakdowns and lower energy costs.</p>
     </div>
-
   </div>
 </section>
 
 <section id="reviews">
   <h2>Customer Reviews</h2>
-  <p>See what our customers are saying on Yelp.</p>
 
   <div class="reviews">
     <div class="review-card">
